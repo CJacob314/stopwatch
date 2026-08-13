@@ -25,6 +25,18 @@ impl AppState {
 fn main() -> iced::Result {
     iced::application(AppState::new, update, view)
         .subscription(subscription)
+        .title("Stopwatch")
+        .antialiasing(true)
+        .window(iced::window::Settings {
+            size: (300, 150).into(),
+            closeable: true,
+            minimizable: true,
+            decorations: true,
+            blur: true,
+            transparent: true,
+            ..Default::default()
+        })
+        .centered()
         .run()
 }
 
